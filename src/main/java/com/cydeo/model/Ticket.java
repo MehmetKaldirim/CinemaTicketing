@@ -19,7 +19,7 @@ public class Ticket extends BaseEntity{
     private Integer rowNumber;
     private Integer seatNumber;
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne()
     private MovieCinema movieCinema;
 
     @ManyToOne(fetch= FetchType.LAZY)

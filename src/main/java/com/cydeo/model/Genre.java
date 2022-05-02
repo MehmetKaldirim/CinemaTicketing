@@ -1,15 +1,16 @@
 package com.cydeo.model;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+
 public class Genre extends BaseEntity{
 
     private String name;
@@ -17,6 +18,11 @@ public class Genre extends BaseEntity{
     @ManyToMany(mappedBy = "genreList")
     private List<Movie> movieList;
 
-
-
+    @Override
+    public String toString() {
+        return "Genre{" +
+                "name='" + name + '\'' +
+                ", movieList=" + movieList +
+                '}';
+    }
 }

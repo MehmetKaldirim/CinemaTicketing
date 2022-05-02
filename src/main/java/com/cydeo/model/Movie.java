@@ -2,8 +2,7 @@ package com.cydeo.model;
 
 import com.cydeo.enums.State;
 import com.cydeo.enums.Type;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,12 +12,14 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+
 public class Movie extends BaseEntity{
 
     private String name;
 
-    private BigDecimal price;
+    private double price;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -39,4 +40,16 @@ public class Movie extends BaseEntity{
             inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", type=" + type +
+                ", state=" + state +
+                ", releaseDate=" + releaseDate +
+                ", duration=" + duration +
+                ", summary='" + summary + '\'' +
+                '}';
+    }
 }
