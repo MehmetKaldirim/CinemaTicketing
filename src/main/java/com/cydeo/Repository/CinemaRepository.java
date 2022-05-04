@@ -32,7 +32,7 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
     //Write a JPQL query to read the cinema name with a specific id
     @Query("SELECT c.name FROM Cinema c WHERE c.id =?1")
-    Cinema getCinemaById(Long id);
+    String getCinemaById(Long id);
 
     @Query("SELECT c.name FROM Cinema c WHERE c.id = ?1") //his answer
     String fetchById(@Param("id") Long id);
