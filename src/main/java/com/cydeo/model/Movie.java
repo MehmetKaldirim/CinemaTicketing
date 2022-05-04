@@ -19,7 +19,7 @@ public class Movie extends BaseEntity{
 
     private String name;
 
-    private double price;
+    private BigDecimal price;
 
     @Enumerated(EnumType.STRING)
     private Type type;

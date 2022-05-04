@@ -1,7 +1,9 @@
 package com.cydeo.model;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -9,7 +11,8 @@ import javax.persistence.*;
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "user_account")
 public class User extends BaseEntity{

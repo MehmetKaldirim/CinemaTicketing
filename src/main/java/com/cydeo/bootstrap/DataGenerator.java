@@ -39,7 +39,7 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        System.out.println("-----------------Derived Queries Account-------------------------");
+        /*System.out.println("-----------------DERIVED Queries Account-------------------------");
         System.out.println(accountRepository.findByCountryOrState("Germany","Berlin"));
 
         System.out.println(accountRepository.findByAgeLessThanEqual(31));
@@ -49,8 +49,19 @@ public class DataGenerator implements CommandLineRunner {
         accountRepository.findByAgeBetween(28,43).stream().forEach(System.out::println);
         System.out.println("----------------Starting With --------------------------------------");
         System.out.println(accountRepository.findByAddressIsStartingWith("262"));
+        System.out.println("-----------------JPQL Account-------------------------");
 
-        /*System.out.println("-----------------Derived Queries Cinema-------------------------");
+        System.out.println("find all accounts \n" +accountRepository.findAllByAccounts());
+        accountRepository.findAllByAccounts().stream().forEach(System.out::println);
+
+        System.out.println("admin accounts are = ");
+        accountRepository.findByRoleEquals(Role.ADMIN).stream().forEach(System.out::println);
+        System.out.println("account order by age asc");
+        accountRepository.getAccountOrderByAgeAsc().stream().forEach(System.out::println);
+
+        System.out.println("account age lower than 40");
+        accountRepository.getAccountAgeLowerThan(40).stream().forEach(System.out::println);
+        System.out.println("-----------------Derived Queries Cinema-------------------------");
         System.out.println(cinemaRepository.findByName("Hall 1 - EMPIRE"));
         System.out.println("-----------------------stream So------------------------------------");
         cinemaRepository.streamTop3BySponsoredNameContains("Play").forEach(System.out::println);
@@ -65,8 +76,10 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println(cinemaRepository.findByNameContainingOrSponsoredNameContaining("SQUARE 13","Play"));
 
 
-
-        System.out.println("-----------------Derived Queries MovieCinemas-------------------------");
+         */
+        System.out.println("-----------------JPQL Queries Cinema-------------------------");
+        System.out.println("Cinema by Id" + cinemaRepository.getCinemaById(1L));
+        /*System.out.println("-----------------Derived Queries MovieCinemas-------------------------");
         //System.out.println("count of movie cinema by Cinema Id" + movieCinemaRepository.countMovieCinemasByMovieCinema_Cinema_Id(3L));
         //System.out.println("Top 3 expensivi\n" + movieCinemaRepository.findTopOrderByMovie_Price());
 
