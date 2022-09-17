@@ -25,7 +25,7 @@ public class DataGenerator implements CommandLineRunner {
     private final TicketRepository ticketRepository;
     private final UserRepository userRepository;
 
-    public DataGenerator(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, LocationRepository locationRepository, MovieCinemaRepository movieCinemaRepository, MovieRepository movieRepository, TicketRepository ticketRepository, UserRepository userRepository) {
+    public DataGenerator(com.cydeo.Repository.AccountRepository accountRepository, com.cydeo.Repository.CinemaRepository cinemaRepository, com.cydeo.Repository.GenreRepository genreRepository, com.cydeo.Repository.LocationRepository locationRepository, com.cydeo.Repository.MovieCinemaRepository movieCinemaRepository, com.cydeo.Repository.MovieRepository movieRepository, com.cydeo.Repository.TicketRepository ticketRepository, com.cydeo.Repository.UserRepository userRepository) {
         this.accountRepository = accountRepository;
         this.cinemaRepository = cinemaRepository;
         this.genreRepository = genreRepository;
@@ -39,6 +39,7 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
+        System.out.println(cinemaRepository.getById(1L));
         /*System.out.println("-----------------DERIVED Queries Account-------------------------");
         System.out.println(accountRepository.findByCountryOrState("Germany","Berlin"));
 
